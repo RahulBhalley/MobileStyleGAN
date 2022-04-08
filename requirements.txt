@@ -1,7 +1,7 @@
 wheel
 torch
 pytorch-lightning==1.0.2
-gdown==3.12.2
+gdown==4.4.0
 addict==2.2.1
 piq==0.5.2
 numpy==1.17.5
