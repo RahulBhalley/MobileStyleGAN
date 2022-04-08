@@ -6,21 +6,21 @@ import torch
 import torch.nn as nn
 import pytorch_lightning as pl
 # dataset
-from core.dataset import NoiseDataset
+from MobileStyleGAN.core.dataset import NoiseDataset
 # teacher model
-from core.model_zoo import model_zoo
-from core.models.mapping_network import MappingNetwork
-from core.models.synthesis_network import SynthesisNetwork
+from MobileStyleGAN.core.model_zoo import model_zoo
+from MobileStyleGAN.core.models.mapping_network import MappingNetwork
+from MobileStyleGAN.core.models.synthesis_network import SynthesisNetwork
 # student model
-from core.models.mobile_synthesis_network import MobileSynthesisNetwork
+from MobileStyleGAN.core.models.mobile_synthesis_network import MobileSynthesisNetwork
 # loss
-from core.loss.distiller_loss import DistillerLoss
+from MobileStyleGAN.core.loss.distiller_loss import DistillerLoss
 # evaluation network
-from core.models.inception_v3 import load_inception_v3
+from MobileStyleGAN.core.models.inception_v3 import load_inception_v3
 # evaluation metric
 from piq import KID
 # utils
-from core.utils import apply_trace_model_mode
+from MobileStyleGAN.core.utils import apply_trace_model_mode
 
 
 class Distiller(pl.LightningModule):

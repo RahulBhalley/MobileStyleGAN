@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from core.loss.non_saturating_gan_loss import NonSaturatingGANLoss
-from core.loss.perceptual_loss import PerceptualLoss
+from MobileStyleGAN.core.loss.non_saturating_gan_loss import NonSaturatingGANLoss
+from MobileStyleGAN.core.loss.perceptual_loss import PerceptualLoss
 from pytorch_wavelets import DWTInverse, DWTForward
 
 

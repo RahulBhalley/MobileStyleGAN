@@ -2,10 +2,9 @@ import argparse
 import os
 import cv2
 import torch
-import numpy as np
-from core.utils import load_cfg, load_weights, tensor_to_img
-from core.distiller import Distiller
-from core.model_zoo import model_zoo
+from MobileStyleGAN.core.utils import load_cfg, load_weights, tensor_to_img
+from MobileStyleGAN.core.distiller import Distiller
+from MobileStyleGAN.core.model_zoo import model_zoo
 from tqdm import tqdm
 
 @torch.no_grad()
