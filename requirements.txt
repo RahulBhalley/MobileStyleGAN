@@ -1,6 +1,6 @@
 wheel
-torch
-pytorch-lightning==1.6.0
+torch==1.11.0
+pytorch-lightning==1.0.2
 gdown==4.4.0
 addict==2.2.1
 piq==0.5.2
