@@ -158,6 +158,9 @@ class Distiller(pl.LightningModule):
             style = style.unsqueeze(1).repeat(1, wsize, 1)
         return style
 
+    def get_latent(self, input):
+        return self.mapping_net(input)
+
     def train_dataloader(self):
         return torch.utils.data.DataLoader(self.trainset, batch_size=self.trainset.batch_size, num_workers=self.cfg.num_workers, shuffle=False)
 
