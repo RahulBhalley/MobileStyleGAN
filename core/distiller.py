@@ -156,6 +156,7 @@ class Distiller(pl.LightningModule):
         style = self.mapping_net(torch.randn(4096, self.mapping_net.style_dim)).mean(0, keepdim=True)
         if wsize != 1:
             style = style.unsqueeze(1).repeat(1, wsize, 1)
+        style = style.to(self.device_info.device)
         return style
 
     def get_latent(self, input):
