@@ -191,6 +191,7 @@ class Distiller(pl.LightningModule):
             style = self.style_mean + 0.5 * (style - self.style_mean)
         if generator == "student":
             img = self.student(style)["img"]
+            print("We run this function.")
         else:
             img = self.synthesis_net(style)["img"]
         if return_latents:
