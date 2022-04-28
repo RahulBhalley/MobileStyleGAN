@@ -195,9 +195,8 @@ class Distiller(pl.LightningModule):
             img = self.synthesis_net(style)["img"]
         if return_latents:
             print(f"style[0].shape: {style[0].shape}")
-            
             print(f"style.shape: {style.shape}")
-            return img, style[0]
+            return img, style
         else:
             return img
 
