@@ -67,9 +67,6 @@ class Distiller(pl.LightningModule):
         # device info
         self.register_buffer("device_info", torch.tensor(1))
 
-        # Reduce memory footprint for training ReStyle.
-        del self.synthesis_net
-
     def _log_loss(self, loss, on_step=True, on_epoch=False, prog_bar=True, logger=True, exclude=["loss"]):
         for k, v in loss.items():
             if not k in exclude:
