@@ -191,6 +191,7 @@ class Distiller(pl.LightningModule):
             style = self.mapping_net(var)
         else:
             style = var
+            style = self.mapping_net(var)
 
         if truncated:
             style = self.style_mean + 0.5 * (style - self.style_mean)
