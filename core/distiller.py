@@ -183,16 +183,23 @@ class Distiller(pl.LightningModule):
                 self.opt_to_mode[i] = "d"
         return opts, []
 
-    def forward(self, var, return_latents, truncated=False, generator="student"):
+    def forward(self, var, input_is_latent=False, return_latents=False, truncated=False, generator="student"):
         var = var.to(self.device_info.device)
         # print(f"return_latents: {return_latents}")
-        style = self.mapping_net(var)
+
+        if not input_is_latent:
+            style = self.mapping_net(var)
+        else:
+            style = var
+
         if truncated:
             style = self.style_mean + 0.5 * (style - self.style_mean)
+
         if generator == "student":
             img = self.student(style)["img"]
         else:
             img = self.synthesis_net(style)["img"]
+
         if return_latents:
             # print(f"style[0].shape: {style[0].shape}")
             # print(f"style.shape: {style.shape}")
