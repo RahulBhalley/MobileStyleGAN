@@ -198,7 +198,7 @@ class Distiller(pl.LightningModule):
             # print(f"style.shape: {style.shape}")
             return img, style
         else:
-            return img
+            return img, None
 
     def simultaneous_forward(self, var, truncated=False):
         var = var.to(self.device_info.device)
